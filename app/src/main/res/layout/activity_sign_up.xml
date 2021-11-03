@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.SignUpActivity"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_Logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="64dp"
+            android:src="@drawable/ispeedlogo"
+            app:layout_constraintBottom_toTopOf="@+id/et_FirstName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_FirstName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/shape_edit_text"
+            android:ems="10"
+            android:fontFamily="@font/gothambook"
+            android:hint="First Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_Logo" />
+
+        <EditText
+            android:id="@+id/et_LastName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/shape_edit_text"
+            android:ems="10"
+            android:fontFamily="@font/gothambook"
+            android:hint="Last Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/et_FirstName"
+            app:layout_constraintStart_toStartOf="@+id/et_FirstName"
+            app:layout_constraintTop_toBottomOf="@+id/et_FirstName" />
+
+        <EditText
+            android:id="@+id/et_EmailAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/shape_edit_text"
+            android:ems="10"
+            android:fontFamily="@font/gothambook"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="@+id/et_LastName"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/et_LastName"
+            app:layout_constraintTop_toBottomOf="@+id/et_institution" />
+        <EditText
+            android:id="@+id/et_confirmPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/shape_edit_text"
+            android:ems="10"
+            android:fontFamily="@font/gothambook"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Register"
+            app:layout_constraintEnd_toEndOf="@+id/et_Password"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/et_Password"
+            app:layout_constraintTop_toBottomOf="@+id/et_Password"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Register"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/shape_button"
+            android:fontFamily="@font/gothammedium"
+            android:text="Register"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/et_EmailAddress"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/et_EmailAddress"
+            app:layout_constraintTop_toBottomOf="@+id/et_confirmPassword" />
+
+        <EditText
+            android:id="@+id/et_emailAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/shape_edit_text"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/et_EmailAddress"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/et_EmailAddress"
+            app:layout_constraintTop_toBottomOf="@+id/et_LastName" />
+
+        <EditText
+            android:id="@+id/et_Password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/shape_edit_text"
+            android:ems="10"
+            android:fontFamily="@font/gothambook"
+            android:hint="Password"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/et_emailAddress"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/et_emailAddress"
+            app:layout_constraintTop_toBottomOf="@+id/et_EmailAddress" />
+
+
+
+        <TextView
+            android:id="@+id/tv_matcher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Passwords do not match."
+            android:textColor="#F44336"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/et_confirmPassword"
+            app:layout_constraintStart_toStartOf="@+id/et_confirmPassword"
+            app:layout_constraintTop_toBottomOf="@+id/et_confirmPassword" />
+
+        <EditText
+            android:id="@+id/et_institution"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/shape_edit_text"
+            android:ems="10"
+            android:fontFamily="@font/gothambook"
+            android:hint="Institution"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/et_EmailAddress"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/et_EmailAddress"
+            app:layout_constraintTop_toBottomOf="@+id/et_emailAddress" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

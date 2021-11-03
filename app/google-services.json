@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "912641750697",
+    "project_id": "ispeed-b7417",
+    "storage_bucket": "ispeed-b7417.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912641750697:android:cdb4f211573fd571569bb8",
+        "android_client_info": {
+          "package_name": "com.example.ispeed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912641750697-168tps4krq2011g96o02cj11ubo3unn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATB2tr41AjAWfioVN9eWbRTEBUHIbCyek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912641750697-168tps4krq2011g96o02cj11ubo3unn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
