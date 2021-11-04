@@ -139,7 +139,7 @@ public class HomeActivity extends AppCompatActivity {
             editor.clear();
             editor.apply();
             Log.d("Logout", "logout: " + editor);
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
             firebaseAuth.signOut();
             Toasty.info(getApplicationContext(), "Logging Out", Toast.LENGTH_SHORT).show();
