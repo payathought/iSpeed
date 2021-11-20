@@ -75,22 +75,7 @@ public class DashboardMainActivity extends AppCompatActivity {
         cv_ping = findViewById(R.id.cv_ping);
         cv_uploadSpeed = findViewById(R.id.cv_uploadSpeed);
 
-    if ((getIntent().getStringExtra("date") !=null &&
-            getIntent().getStringExtra("start") !=null &&
-            getIntent().getStringExtra("end") !=null)
 
-    ){
-        filterDay = getIntent().getStringExtra("date");
-        filterStartingHour = getIntent().getStringExtra("start");
-        filterEndingHour = getIntent().getStringExtra("end");
-
-        Log.d(TAG, "filterDay: " + filterDay);
-
-        getDataWithFilters();
-
-    }else{
-        getData();
-    }
 
 
 
@@ -157,6 +142,27 @@ public class DashboardMainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if ((getIntent().getStringExtra("date") !=null &&
+                getIntent().getStringExtra("start") !=null &&
+                getIntent().getStringExtra("end") !=null)
+
+        ){
+            filterDay = getIntent().getStringExtra("date");
+            filterStartingHour = getIntent().getStringExtra("start");
+            filterEndingHour = getIntent().getStringExtra("end");
+
+            Log.d(TAG, "filterDay: " + filterDay);
+
+            getDataWithFilters();
+
+        }else{
+            getData();
+        }
     }
 
     public void getData(){
