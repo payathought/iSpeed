@@ -12,6 +12,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.provider.Settings;
@@ -185,9 +186,19 @@ public class AutoMaticTrackingActivity extends AppCompatActivity {
         btn_startTracking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Intent startServiceIntent = new Intent(AutoMaticTrackingActivity.this, MyService.class);
+//                startServiceIntent.putExtra("loc",currentLocation);
+//                startService(startServiceIntent);
+
+
                 Intent startServiceIntent = new Intent(AutoMaticTrackingActivity.this, MyService.class);
                 startServiceIntent.putExtra("loc",currentLocation);
-                startService(startServiceIntent);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    startForegroundService(startServiceIntent);
+                }else {
+                    startService(startServiceIntent);
+                }
             }
         });
         btn_stopTracking.setOnClickListener(new View.OnClickListener() {

@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
     SharedPreferences sharedpreferences;
 
     SharedPreferences.Editor editor;
-    Button bnt_startTracking,btn_stopTracking;
+//    Button bnt_startTracking,btn_stopTracking;
     private FusedLocationProviderClient fusedLocationClient;
 
     String currentLocation;
@@ -70,8 +70,8 @@ public class HomeActivity extends AppCompatActivity {
         cv_geomap = findViewById(R.id.cv_geomap);
         cv_stab = findViewById(R.id.cv_stab);
         cv_tracking = findViewById(R.id.cv_tracking);
-        bnt_startTracking = findViewById(R.id.bnt_startTracking);
-        btn_stopTracking = findViewById(R.id.btn_stopTracking);
+//        bnt_startTracking = findViewById(R.id.bnt_startTracking);
+//        btn_stopTracking = findViewById(R.id.btn_stopTracking);
 
         method = new FunctionMethod();
         toolbar  = findViewById(R.id.toolBar);
@@ -169,41 +169,41 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, DashboardMainActivity.class));
             }
         });
-//        cv_tracking.setOnClickListener(new View.OnClickListener() {
+        cv_tracking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, AutoMaticTrackingActivity.class));
+            }
+        });
+
+//        bnt_startTracking.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                startActivity(new Intent(HomeActivity.this, AutoMaticTrackingActivity.class));
+//                Intent startServiceIntent = new Intent(HomeActivity.this, MyService.class);
+//                startServiceIntent.putExtra("loc",currentLocation);
+//
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//                    startForegroundService(startServiceIntent);
+//                }else {
+//                    startService(startServiceIntent);
+//                }
+//                editor.putBoolean("isStart", true);
+//                btn_stopTracking.setVisibility(View.VISIBLE);
+//                bnt_startTracking.setVisibility(View.GONE);
 //            }
 //        });
-
-        bnt_startTracking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startServiceIntent = new Intent(HomeActivity.this, MyService.class);
-                startServiceIntent.putExtra("loc",currentLocation);
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    startForegroundService(startServiceIntent);
-                }else {
-                    startService(startServiceIntent);
-                }
-                editor.putBoolean("isStart", true);
-                btn_stopTracking.setVisibility(View.VISIBLE);
-                bnt_startTracking.setVisibility(View.GONE);
-            }
-        });
-        btn_stopTracking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent stopServiceIntent = new Intent(HomeActivity.this, MyService.class);
-                stopServiceIntent.putExtra("loc",currentLocation);
-                stopService(stopServiceIntent);
-                editor.putBoolean("isStart", false);
-                btn_stopTracking.setVisibility(View.GONE);
-                bnt_startTracking.setVisibility(View.VISIBLE);
-            }
-        });
+//        btn_stopTracking.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent stopServiceIntent = new Intent(HomeActivity.this, MyService.class);
+//                stopServiceIntent.putExtra("loc",currentLocation);
+//                stopService(stopServiceIntent);
+//                editor.putBoolean("isStart", false);
+//                btn_stopTracking.setVisibility(View.GONE);
+//                bnt_startTracking.setVisibility(View.VISIBLE);
+//            }
+//        });
     }
 
 
@@ -221,12 +221,12 @@ public class HomeActivity extends AppCompatActivity {
                 boolean isTrue = Boolean.parseBoolean(sharedpreferences.getAll().get("isStart").toString());
                 if (isTrue){
                     Log.d(TAG, "onResume: " + isTrue);
-                    btn_stopTracking.setVisibility(View.VISIBLE);
-                    bnt_startTracking.setVisibility(View.GONE);
+//                    btn_stopTracking.setVisibility(View.VISIBLE);
+//                    bnt_startTracking.setVisibility(View.GONE);
                 }else {
                     Log.d(TAG, "onResume: " + isTrue);
-                    btn_stopTracking.setVisibility(View.GONE);
-                    bnt_startTracking.setVisibility(View.VISIBLE);
+//                    btn_stopTracking.setVisibility(View.GONE);
+//                    bnt_startTracking.setVisibility(View.VISIBLE);
                 }
             }
 
